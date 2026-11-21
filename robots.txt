@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uneautrevoix2027.fr/sitemap.xml
