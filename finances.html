@@ -107,7 +107,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #087572;outline-offset:2p
       <li>État, dépenses : <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053508155/">Loi n° 2026-103 du 19 février 2026 de finances pour 2026</a>, état B (crédits de paiement), via <a href="https://comptespublics.fr/articles/budget-2027-ou-vont-les-credits-en-plus">comptespublics.fr</a>.</li>
       <li>Collectivités, comptes 2025 : <a href="https://www.collectivites-locales.gouv.fr/files/files/Etudes-et-statistiques/OFGL/2026/Rapport%20OFGL%202026%20complet%20V24ao%C3%BBt2026.pdf">Rapport OFGL 2026</a>, annexe 1 (DGCL, données DGFiP, budgets principaux, valeurs provisoires).</li>
     </ul>
-    Les montants sont arrondis. L'État est présenté en prévision (année 2026) et les collectivités en exécution (année 2025) : ce sont les dernières données complètes disponibles pour chacun. La Sécurité sociale (environ la moitié de la dépense publique) n'est pas encore intégrée.
+    Les montants sont arrondis. L'État est présenté en prévision (année 2026) et les collectivités en exécution (année 2025) : ce sont les dernières données complètes disponibles pour chacun. La Sécurité sociale (environ la moitié de la dépense publique) n'est pas encore intégrée. Pour la Sécu et le déficit, voir <a href="/secu-deficit.html">la Sécu et le déficit, ramenés à 1 000 €</a>.
   </div>
 </div>
 <div id="tip"></div>
@@ -245,6 +245,7 @@ const tabs=document.getElementById("tabs");
 const names={ensemble:"Vue d'ensemble"};
 ORDER.forEach(k=>{const b=document.createElement("button");b.className="tab";b.role="tab";b.textContent=names[k]||DATA[k].label;b.dataset.k=k;b.onclick=()=>{location.hash=k;};tabs.appendChild(b);});
 {const a=document.createElement("a");a.className="evo-btn";a.href="/evolution-2018-2026.html";a.textContent="Évolution 2018 vs 2026 →";tabs.appendChild(a);}
+{const a=document.createElement("a");a.className="evo-btn";a.style.marginLeft="auto";a.href="/secu-deficit.html";a.textContent="La Sécu et le déficit, sur 1 000 € →";tabs.appendChild(a);}
 function route(){const k=ORDER.includes(location.hash.slice(1))?location.hash.slice(1):"ensemble";
   [...tabs.children].forEach(b=>b.setAttribute("aria-selected",b.dataset.k===k));hideTip();k==="ensemble"?viewAll():viewLevel(k);}
 addEventListener("hashchange",route);route();
