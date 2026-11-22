@@ -91,9 +91,87 @@ details .prose p{font-size:15px}
 <div class="wrap hero">
 <p class="kicker">Citoyen candidat à l'élection présidentielle 2027</p>
 <h1>Une autre voi<span class="x">X</span> pour construire une autre voi<span class="x">E</span>.</h1>
-<p>La politique appartient aux citoyens.<br>Ils doivent pouvoir décider, pas seulement voter.</p>
+<p>La politique appartient aux citoyens.<br>Ils doivent pouvoir décider, pas seulement voter.<br>Pourquoi voter pour quelqu'un afin qu'il décide à notre place&nbsp;?</p>
 <div class="ctas"><a class="btn btn-primary" href="#participer">Je donne mon avis</a><a class="btn btn-secondary" href="#demarche">Découvrir la démarche</a></div>
 </div>
+
+<style>
+#parcours{padding:56px 0;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--paper),#F1EEE6)}
+#parcours h2{margin-bottom:8px}
+#parcours .sub{color:var(--ink-muted);margin:0 0 32px;font-size:19px;max-width:720px}
+.pc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;counter-reset:s}
+.pc>li{position:relative;background:var(--surface);border:2px solid var(--border);border-radius:16px;padding:16px 14px 18px;opacity:.45;transform:translateY(8px);transition:opacity .6s,transform .6s,border-color .6s,box-shadow .6s}
+.pc>li.vu{opacity:1;transform:none}
+.pc>li.act{border-color:var(--accent);box-shadow:0 10px 28px rgba(11,143,140,.18);transform:translateY(-4px)}
+.pc>li:not(:last-child):after{content:"";position:absolute;right:-13px;top:96px;width:12px;height:12px;border-top:3px solid var(--border-control);border-right:3px solid var(--border-control);transform:rotate(45deg);z-index:2}
+.pc .quand{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);background:var(--ink);border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.pc li.si .quand{background:var(--accent)}
+.pc svg{display:block;width:100%;height:120px;margin:4px 0 10px}
+.pc h3{font-size:18px;line-height:1.25;margin:0 0 6px}
+.pc p{font-size:15px;line-height:1.45;margin:0;color:var(--ink-muted)}
+.pc p strong{color:var(--ink)}
+.chute{margin-top:28px;background:var(--ink);color:var(--paper);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;opacity:0;transform:translateY(10px);transition:opacity .7s,transform .7s}
+.chute.vu{opacity:1;transform:none}
+.chute p{margin:0;font-size:24px;line-height:1.3;font-weight:700;max-width:720px}
+.chute p span{color:#7FD3CF}
+.chute .btn-primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.pcbar{display:flex;align-items:center;gap:12px;margin-top:18px;font-size:14px;color:var(--ink-muted)}
+.pcbar button{min-height:40px;border-radius:10px;border:1px solid var(--border-control);background:var(--surface);font:600 15px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer;padding:0 14px}
+/* micro-animations */
+.pc .bul{transition:transform 1s cubic-bezier(.5,0,.3,1) .3s}
+.pc li.act .bul,.pc li.fait .bul{transform:translateY(20px)}
+.pc .pop{transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.pc li.act .pop,.pc li.fait .pop{transform:scale(1)}
+.pc li.act .pop:nth-child(2),.pc li.fait .pop:nth-child(2){transition-delay:.1s}
+.pc .d1{transition-delay:.15s}.pc .d2{transition-delay:.3s}.pc .d3{transition-delay:.45s}.pc .d4{transition-delay:.6s}.pc .d5{transition-delay:.75s}.pc .d6{transition-delay:.9s}.pc .d7{transition-delay:1.05s}.pc .d8{transition-delay:1.2s}
+.pc .chk{stroke-dasharray:40;stroke-dashoffset:40;transition:stroke-dashoffset .6s 1s}
+.pc li.act .chk,.pc li.fait .chk{stroke-dashoffset:0}
+@media (max-width:900px){
+ .pc{grid-template-columns:1fr;gap:18px}
+ .pc>li{display:grid;grid-template-columns:110px 1fr;column-gap:14px;align-items:start}
+ .pc>li .quand{grid-column:1/3;justify-self:start}
+ .pc svg{grid-row:2/4;height:100px;margin:0}
+ .pc>li:not(:last-child):after{right:auto;left:50%;top:auto;bottom:-15px;transform:rotate(135deg)}
+ .chute p{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){.pc>li,.chute,.pc .bul,.pc .pop,.pc .chk{transition:none!important}}
+</style>
+<section id="parcours" aria-labelledby="pc-t"><div class="wrap">
+<h2 id="pc-t">Comment ça marche&nbsp;? De votre vote à la loi</h2>
+<p class="sub">Une Autre Voix n'est pas un programme de plus. C'est une autre façon de décider, en 5 étapes.</p>
+<ol class="pc" id="pc">
+<li><span class="quand">Aujourd'hui</span>
+<svg viewBox="0 0 200 120" aria-hidden="true"><g fill="#B9B5AA"><circle cx="40" cy="38" r="12"/><path d="M20 92c0-16 9-28 20-28s20 12 20 28z"/><circle cx="100" cy="34" r="13"/><path d="M78 92c0-18 10-30 22-30s22 12 22 30z"/><circle cx="160" cy="38" r="12"/><path d="M140 92c0-16 9-28 20-28s20 12 20 28z"/></g><rect x="84" y="70" width="32" height="40" rx="3" fill="#fff" stroke="#17181C" stroke-width="3"/><text x="100" y="97" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="22" fill="#696864">?</text><text x="40" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#696864">abstention</text><text x="160" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#696864">vote blanc</text></svg>
+<h3>Aucun candidat ne vous convient&nbsp;?</h3><p>Vous votez blanc, vous ne votez plus, ou «&nbsp;contre&nbsp;» sans y croire. En 2022, <strong>plus d'un inscrit sur quatre</strong> n'a pas voté au 1<sup>er</sup> tour.</p></li>
+<li><span class="quand">Avril 2027</span>
+<svg viewBox="0 0 200 120" aria-hidden="true"><g class="bul"><rect x="70" y="2" width="60" height="40" rx="3" fill="#fff" stroke="#0B8F8C" stroke-width="3"/><text x="100" y="16" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="9" fill="#17181C">UNE AUTRE VOIX</text></g><rect x="40" y="52" width="120" height="64" rx="8" fill="#DDEEEC" stroke="#17181C" stroke-width="3"/><rect x="66" y="50" width="68" height="7" rx="3" fill="#17181C"/><text x="100" y="96" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="14" fill="#087572">URNE</text></svg>
+<h3>Vous votez Une Autre Voix</h3><p>Votre vote ne dit plus seulement «&nbsp;non&nbsp;». Il dit&nbsp;: <strong>je veux que les citoyens décident</strong>.</p></li>
+<li class="si"><span class="quand">Si nous gagnons</span>
+<svg viewBox="0 0 200 120" aria-hidden="true"><g fill="#0B8F8C"><circle class="pop d1" cx="100" cy="14" r="9"/><circle class="pop d2" cx="140" cy="28" r="9"/><circle class="pop d3" cx="154" cy="62" r="9"/><circle class="pop d4" cx="140" cy="96" r="9"/><circle class="pop d5" cx="100" cy="108" r="9"/><circle class="pop d6" cx="60" cy="96" r="9"/><circle class="pop d7" cx="46" cy="62" r="9"/><circle class="pop d8" cx="60" cy="28" r="9"/></g><rect x="78" y="40" width="44" height="46" rx="3" fill="#fff" stroke="#17181C" stroke-width="3"/><g stroke="#17181C" stroke-width="3" stroke-linecap="round"><line x1="86" y1="53" x2="114" y2="53"/><line x1="86" y1="63" x2="114" y2="63"/><line x1="86" y1="73" x2="106" y2="73"/></g></svg>
+<h3>1<sup>re</sup> étape&nbsp;: la convention «&nbsp;mère&nbsp;»</h3><p>Des <strong>citoyens tirés au sort</strong> fixent les nouvelles règles&nbsp;: comment fonctionnent les conventions, comment une pétition déclenche une convention ou un référendum, et si besoin ce qu'il faut changer dans la Constitution.</p></li>
+<li class="si"><span class="quand">Ensuite</span>
+<svg viewBox="0 0 200 120" aria-hidden="true"><g fill="#0B8F8C"><g class="pop d1"><circle cx="36" cy="30" r="7"/><circle cx="22" cy="44" r="7"/><circle cx="50" cy="44" r="7"/></g><g class="pop d3"><circle cx="100" cy="30" r="7"/><circle cx="86" cy="44" r="7"/><circle cx="114" cy="44" r="7"/></g><g class="pop d5"><circle cx="164" cy="30" r="7"/><circle cx="150" cy="44" r="7"/><circle cx="178" cy="44" r="7"/></g></g><g font-family="Inter,sans-serif" font-weight="700" font-size="13" fill="#17181C" text-anchor="middle"><text x="36" y="76">Santé</text><text x="100" y="76">Logement</text><text x="164" y="76">École</text></g><text x="100" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#696864">… travail, énergie, retraites…</text></svg>
+<h3>Une convention par grand sujet</h3><p>Pour chaque thème, des citoyens tirés au sort écoutent les experts et ceux qui vivent le problème, puis <strong>décident</strong>.</p></li>
+<li class="si"><span class="quand">Enfin</span>
+<svg viewBox="0 0 200 120" aria-hidden="true"><g fill="#3D5A80"><circle cx="20" cy="96" r="5"/><circle cx="26" cy="76" r="5"/><circle cx="40" cy="60" r="5"/><circle cx="60" cy="50" r="5"/><circle cx="80" cy="50" r="5"/><circle cx="100" cy="60" r="5"/><circle cx="114" cy="76" r="5"/><circle cx="120" cy="96" r="5"/><circle cx="40" cy="96" r="5"/><circle cx="46" cy="80" r="5"/><circle cx="60" cy="72" r="5"/><circle cx="80" cy="72" r="5"/><circle cx="94" cy="80" r="5"/><circle cx="100" cy="96" r="5"/></g><text x="70" y="114" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#696864">Parlement</text><rect x="138" y="22" width="52" height="68" rx="3" fill="#fff" stroke="#17181C" stroke-width="3"/><text x="164" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="14" fill="#17181C">LOI</text><path class="chk" d="M150 64l9 9 18-20" fill="none" stroke="#0B8F8C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<h3>Les décisions deviennent des lois</h3><p><strong>Le Parlement</strong> les met en forme et les vote, <strong>le Gouvernement</strong> les applique, <strong>le Président</strong> veille au respect de la Constitution.</p></li>
+</ol>
+<div class="pcbar"><button id="pcr" type="button">Revoir l'animation</button><span>Étape <b id="pcn">1</b> sur 5</span></div>
+<div class="chute" id="pcc"><p>Vous ne votez plus pour quelqu'un qui décidera à votre place.<br><span>Vous votez pour décider vous-mêmes.</span></p><a class="btn btn-primary" href="#participer">Je donne mon avis</a></div>
+</div></section>
+<script>
+(function(){
+var L=[].slice.call(document.querySelectorAll('#pc>li')),C=document.getElementById('pcc'),n=document.getElementById('pcn'),k=-1,T=null,
+ rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function show(i){k=i;L.forEach(function(l,j){l.classList.toggle('vu',j<=i);l.classList.toggle('act',j==i);l.classList.toggle('fait',j<i)});n.textContent=Math.min(i+1,5);C.classList.toggle('vu',i>=4)}
+function run(){clearTimeout(T);show(0);(function nx(){T=setTimeout(function(){if(k<4){show(k+1);nx()}else{L[4].classList.remove('act');L[4].classList.add('fait')}},3200)})()}
+document.getElementById('pcr').onclick=run;
+if(rm){show(4);return}
+if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){o.disconnect();run()}},{threshold:.3});o.observe(document.getElementById('pc'))}else run();
+L.forEach(function(l,j){l.addEventListener('click',function(){clearTimeout(T);show(j);if(j==4){}})});
+})();
+</script>
+
 
 <section id="demarche"><div class="wrap cols">
 <div class="prose">
